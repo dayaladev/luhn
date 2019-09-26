@@ -7,7 +7,7 @@ RSpec.describe Luhn, type: :model do
     end
 
     it 'should return false if the number is not valid' do
-      expect(Luhn.is_valid?(4194560385008505)).to be true
+      expect(Luhn.is_valid?(4194560385008505)).to be false
     end
 
     # some credit card numbers are 15 digits
@@ -17,7 +17,7 @@ RSpec.describe Luhn, type: :model do
     end
 
     it 'should return false if the number is valid and the number has an odd number of digits' do
-      expect(Luhn.is_valid?(377681478627337)).to be true
+      expect(Luhn.is_valid?(377681478627337)).to be false
     end
   end
 end
